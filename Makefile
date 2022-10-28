@@ -1,9 +1,9 @@
 
 NAME		=	libft.a
-DIRSRC		=	.
-DIROBJ		=	.
-INCLUDE		=	.
-SRC			=	# src.c ...
+DIRSRC		=	./
+DIROBJ		=	./
+INCLUDE		=	./
+SRC			=	ft_isalpha.c
 OAUX		=	$(SRC:%=$(DIROBJ)%)
 DEPS		=	$(OAUX:.c=.d)
 OBJS		=	$(OAUX:.c=.o)
@@ -23,7 +23,7 @@ CC			=	/usr/bin/clang
 RM			=	/bin/rm -f
 ECHO		=	/bin/echo -e
 
-%.o		:		../$(DIRSRC)/%.c
+%.o		:		%.c
 				$(CC) $(CFLAGS) -I $(INCLUDE) -MMD -o $@ -c $<
 
 $(NAME)	:		$(OBJS)
