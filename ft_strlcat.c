@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 21:41:19 by echavez-          #+#    #+#             */
-/*   Updated: 2022/11/14 17:06:36 by echavez-         ###   ########.fr       */
+/*   Updated: 2022/11/14 17:39:00 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	i = 0;
 	if (size < dst_len || size == 0)
 		return (src_len + size);
-	while (dst_len + i < size - 1  && src[i])
+	while (dst_len + i < size - 1 && src[i])
 	{
 		dst[dst_len + i] = src[i];
 		i++;
 	}
 	dst[dst_len + i] = '\0';
-
 	return (dst_len + src_len);
 }

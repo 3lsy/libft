@@ -6,7 +6,7 @@
 /*   By: echavez- <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 20:52:55 by echavez-          #+#    #+#             */
-/*   Updated: 2022/11/12 21:07:26 by echavez-         ###   ########.fr       */
+/*   Updated: 2022/11/14 17:38:24 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	while (src[i])
 		i++;
-
 	return (i);
 }
