@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 18:51:20 by echavez-          #+#    #+#             */
-/*   Updated: 2022/11/04 18:13:13 by echavez-         ###   ########.fr       */
+/*   Updated: 2022/11/16 17:53:21 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	*ft_memset(void *s, int c, size_t n)
 
 	i = -1;
 	while (++i < n)
-		*((unsigned char *)s + i) = c;
+		*((t_byte *)s + i) = c;
 	return (s);
 }
