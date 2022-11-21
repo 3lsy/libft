@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 20:36:09 by echavez-          #+#    #+#             */
-/*   Updated: 2022/11/20 20:53:14 by echavez-         ###   ########.fr       */
+/*   Updated: 2022/11/21 09:44:47 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,11 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		j;
 	int		k;
-	int		tab_size;
 	char	**tab;
 
 	if (!s)
 		return (NULL);
-	tab_size = ft_count_words(s, c);
-	tab = malloc((tab_size + 1) * sizeof(char *));
+	tab = malloc((ft_count_words(s, c) + 1) * sizeof(char *));
 	if (!tab)
 		return (NULL);
 	k = 0;
@@ -75,13 +73,12 @@ char	**ft_split(char const *s, char c)
 	{
 		while (s[i] && s[i] == c)
 			i++;
-		if (s[i] && s[i] != c)
-		{
-			j = i;
-			while (s[i] && s[i] != c)
-				i++;
-			tab[k++] = ft_strndup(&s[j], i - j);
-		}
+		if (!(s[i] && s[i] != c))
+			continue ;
+		j = i;
+		while (s[i] && s[i] != c)
+			i++;
+		tab[k++] = ft_strndup(&s[j], i - j);
 	}
 	tab[k] = NULL;
 	return (tab);
