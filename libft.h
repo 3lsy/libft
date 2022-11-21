@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:32:07 by echavez-          #+#    #+#             */
-/*   Updated: 2022/11/20 23:50:37 by echavez-         ###   ########.fr       */
+/*   Updated: 2022/11/21 09:56:51 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdint.h>
 # include <unistd.h>
 
-typedef	unsigned char t_byte;
+typedef unsigned char	t_byte;
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -39,7 +39,7 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
-char	*ft_strnstr(const char * s1, const char * s2, size_t len);
+char	*ft_strnstr(const char *s1, const char *s2, size_t len);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *src);
