@@ -6,52 +6,57 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 19:51:03 by echavez-          #+#    #+#             */
-/*   Updated: 2022/11/20 20:29:22 by echavez-         ###   ########.fr       */
+/*   Updated: 2022/11/23 17:37:39 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_count(char const *s1, char c)
+static int	from_str(char const *s1, char c)
 {
 	size_t	i;
-	size_t	count;
 
 	i = 0;
-	count = 0;
 	while (s1[i])
 	{
 		if (s1[i] == c)
-			count++;
+			return (1);
 		i++;
 	}
-	return (count);
+	return (0);
+}
+
+static size_t	trim_size(char const *s1, char const *set, size_t *i, size_t *j)
+{
+	size_t	count;
+
+	*i = 0;
+	while (s1[*i] && from_str(set, s1[*i]))
+		(*i)++;
+	*j = ft_strlen(s1) - 1;
+	while (*j != 0 && from_str(set, s1[*j]))
+		(*j)--;
+	count = *i + (ft_strlen(s1) - 1 - *j);
+	if (*i == *j)
+		return (1);
+	if (*i > *j)
+		return (0);
+	return (ft_strlen(s1) - count);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	s1_len;
-	size_t	c_set;
 	size_t	i;
-	char	*s;
-	char	*s_copy;
+	size_t	j;
+	char	*new;
+	int		new_i;
 
-	s1_len = ft_strlen(s1);
-	c_set = 0;
-	i = 0;
-	while (set[i])
-		c_set += ft_count(s1, set[i++]);
-	s = malloc((s1_len - c_set + 1) * sizeof(char));
-	if (!s)
+	new = malloc((trim_size(s1, set, &i, &j) + 1) * sizeof(char));
+	if (!new)
 		return (NULL);
-	s_copy = s;
-	i = 0;
-	while (i < s1_len && s1[i])
-	{
-		if (ft_count(set, s1[i]) == 0)
-			*(s++) = s1[i];
-		i++;
-	}
-	*s = 0;
-	return (s_copy);
+	new_i = 0;
+	while (s1[new_i] && i <= j)
+		new[new_i++] = s1[i++];
+	new[new_i] = 0;
+	return (new);
 }
