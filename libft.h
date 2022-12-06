@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:32:07 by echavez-          #+#    #+#             */
-/*   Updated: 2022/12/06 02:53:21 by echavez-         ###   ########.fr       */
+/*   Updated: 2022/12/06 11:50:39 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include <stdint.h>
 # include <unistd.h>
-#include <inttypes.h>
+# include <inttypes.h>
 
 typedef unsigned char	t_byte;
 
