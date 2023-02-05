@@ -1,5 +1,5 @@
 # libft
-![](docs/libft.png)
+<img src="libft.png"/>
 
 The libft is a library of some functions from the C standard library and other utility functions that students at 42 use during the next projects.
 
