@@ -6,13 +6,13 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 15:56:43 by echavez-          #+#    #+#             */
-/*   Updated: 2023/02/02 15:42:55 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/02/05 14:27:41 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	fill_buffer(char **buffer, int fd)
+int	ft_fill_buffer(char **buffer, int fd)
 {
 	char	*buffy;
 	int		end;
@@ -40,13 +40,13 @@ int	fill_buffer(char **buffer, int fd)
 	return (1);
 }
 
-char	*get_next_line(int fd)
+char	*ft_get_next_line(int fd)
 {
 	static char	*buffer = NULL;
 	char		*line;
 	int			enter;
 
-	if (!fill_buffer(&buffer, fd))
+	if (!ft_fill_buffer(&buffer, fd))
 	{
 		free(buffer);
 		buffer = NULL;

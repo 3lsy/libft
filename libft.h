@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:32:07 by echavez-          #+#    #+#             */
-/*   Updated: 2023/02/02 16:12:47 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/02/05 14:28:10 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 int			ft_putnbr_base(int nbr, char *base);
 uintmax_t	ft_uputnbr_base(uintmax_t nbr, char *base);
-char		*get_next_line(int fd);
+char		*ft_get_next_line(int fd);
 
 /*
 **	get_next_line utils
