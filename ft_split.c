@@ -6,13 +6,13 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 20:36:09 by echavez-          #+#    #+#             */
-/*   Updated: 2022/11/21 09:44:47 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/02/05 19:46:16 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_count_words(char const *str, char c)
+static int	ft_count_words(char const *str, char c)
 {
 	int	i;
 	int	count_words;
@@ -33,7 +33,7 @@ int	ft_count_words(char const *str, char c)
 	return (count_words);
 }
 
-char	*ft_strndup(char const *src, int size)
+static char	*ft_strndup(char const *src, int size)
 {
 	int		i;
 	int		lens;
@@ -82,4 +82,14 @@ char	**ft_split(char const *s, char c)
 	}
 	tab[k] = NULL;
 	return (tab);
+}
+
+void	ft_free_split(char ***split)
+{
+	int	i;
+
+	i = 0;
+	while (split[i])
+		free(split[i++]);
+	free(split);
 }
