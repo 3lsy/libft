@@ -6,13 +6,13 @@
 #    By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/11 18:36:36 by echavez-          #+#    #+#              #
-#    Updated: 2023/02/02 16:08:49 by echavez-         ###   ########.fr        #
+#    Updated: 2023/02/06 22:00:27 by echavez-         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME		=	libft.a
 DIRSRC		=	./
-DIROBJ		=	./
+DIROBJ		=	./depo/
 INCLUDE		=	./
 SRC			=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putnbr_base.c ft_uputnbr_base.c ft_strchr_pos.c ft_fstrdup.c ft_strjoin_gnl.c ft_get_next_line.c
 OAUX		=	$(SRC:%=$(DIROBJ)%)
@@ -38,11 +38,11 @@ GREEN		=	"\e[92m"
 BLUE		=	"\e[34m"
 E0M			=	"\e[0m"
 
-%.o		:		%.c
+%.o		:		../$(DIRSRC)/%.c
 				@printf $(GREEN)"Compiling libft object files %-33.33s\r" $@
 				@$(CC) $(CFLAGS) -I $(INCLUDE) -MMD -o $@ -c $<
 
-$(NAME)	:		$(OBJS)
+$(NAME)	:		mkdepo $(OBJS)
 				@printf $(E0M)"\n"
 				@$(ECHO) $(BOLD) $(BLUE)
 				@$(ECHO) '⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠀⣀⠀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀'
@@ -86,6 +86,9 @@ fclean	:		clean
 				@$(ECHO) '> Remove executable'
 
 re		:		fclean all
+
+mkdepo	:
+				@mkdir -p $(DIROBJ)
 
 .PHONY	:		all clean fclean re
 
