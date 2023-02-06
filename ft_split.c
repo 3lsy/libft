@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 20:36:09 by echavez-          #+#    #+#             */
-/*   Updated: 2023/02/05 19:46:16 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/02/06 12:14:45 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	ft_free_split(char ***split)
 	int	i;
 
 	i = 0;
-	while (split[i])
-		free(split[i++]);
-	free(split);
+	while ((*split)[i])
+		free((*split)[i++]);
+	free(*split);
 }
