@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:32:07 by echavez-          #+#    #+#             */
-/*   Updated: 2023/02/05 19:45:42 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/02/11 13:05:41 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,5 @@ char		*ft_get_next_line(int fd);
 
 int			ft_strchr_pos(char *str, char c);
 char		*ft_fstrdup(char **fsrc, const char *src);
-char		*ft_strjoin_gnl(char **s1, char const *s2);
 
 #endif
