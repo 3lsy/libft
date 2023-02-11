@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 14:08:36 by echavez-          #+#    #+#             */
-/*   Updated: 2023/02/11 17:29:40 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/02/11 22:15:38 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	ft_count_args(char const *str, int count_args)
 {
-	int	i;
-	char quote;
+	int		i;
+	char	quote;
 
 	i = 0;
 	while (str[i])
@@ -43,7 +43,7 @@ static int	ft_count_args(char const *str, int count_args)
 
 static char	*end_of_arg(const char *s, int *i, int j)
 {
-	char quote;
+	char	quote;
 
 	if (s[*i] == '\'' || s[*i] == '\"')
 	{
