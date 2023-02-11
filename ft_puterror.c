@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_puterror.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 23:41:48 by echavez-          #+#    #+#             */
-/*   Updated: 2023/02/11 16:13:02 by echavez-         ###   ########.fr       */
+/*   Created: 2023/02/11 18:19:30 by echavez-          #+#    #+#             */
+/*   Updated: 2023/02/11 18:32:16 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putstr_fd(char *s, int fd)
+int	ft_puterror(char *start, char *cmd, char *end)
 {
-	return (write(fd, s, ft_strlen(s)));
+	int	ret;
+
+	ret = 0;
+	ret += ft_putstr_fd(start, 2);
+	ret += ft_putstr_fd(": ", 2);
+	ret += ft_putstr_fd(cmd, 2);
+	ret += ft_putstr_fd(": ", 2);
+	ret += ft_putstr_fd(end, 2);
+	ret += ft_putstr_fd("\n", 2);
+	return (ret);
 }

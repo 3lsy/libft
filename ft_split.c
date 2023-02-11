@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 20:36:09 by echavez-          #+#    #+#             */
-/*   Updated: 2023/02/06 12:14:45 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/02/11 16:01:30 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	ft_count_words(char const *str, char c)
 	return (count_words);
 }
 
-static char	*ft_strndup(char const *src, int size)
+char	*ft_strndup(char const *src, int size)
 {
 	int		i;
 	int		lens;
