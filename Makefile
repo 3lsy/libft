@@ -6,7 +6,7 @@
 #    By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/11 18:36:36 by echavez-          #+#    #+#              #
-#    Updated: 2023/02/20 09:33:59 by marvin           ###   ########.fr        #
+#    Updated: 2023/02/20 09:34:58 by marvin           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -47,7 +47,7 @@ E0M			=	"\e[0m"
 				@printf $(GREEN)"Compiling libft object files %-33.33s\r" $@
 				@$(CC) $(CFLAGS) -I $(INCLUDE) -MMD -o $@ -c $<
 
-$(NAME)	:		mkdepo $(OBJS)
+$(NAME)	:		$(OBJS)
 				@printf $(E0M)"\n"
 				@$(ECHO) $(BOLD) $(BLUE)
 				@$(ECHO) '⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠀⣀⠀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀'
