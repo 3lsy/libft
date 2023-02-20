@@ -6,9 +6,14 @@
 #    By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/11 18:36:36 by echavez-          #+#    #+#              #
-#    Updated: 2023/02/11 18:23:51 by echavez-         ###   ########.fr        #
+#    Updated: 2023/02/20 09:33:59 by marvin           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
+
+.ONESHELL:
+
+$(info Creating directory...)
+$(shell mkdir -p ./depo/)
 
 NAME		=	libft.a
 DIRSRC		=	./
