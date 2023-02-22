@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:32:07 by echavez-          #+#    #+#             */
-/*   Updated: 2023/02/11 18:23:40 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/02/22 22:10:32 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,13 @@
 # endif
 
 typedef unsigned char	t_byte;
+
+typedef struct s_list
+{
+	void			*obj;
+	size_t			size;
+	struct s_list	*next;
+}					t_list;
 
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
@@ -55,7 +62,7 @@ char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strtrim(char const *s1, char const *set);
 char		**ft_split(char const *s, char c);
 char		**ft_split_args(const char *s);
-void		ft_free_split(char ***split);
+void		*ft_free_split(char ***split);
 char		*ft_itoa(int n);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
@@ -68,4 +75,9 @@ uintmax_t	ft_uputnbr_base(uintmax_t nbr, char *base);
 char		*ft_get_next_line(int fd);
 int			ft_isspace(char c);
 int			ft_puterror(char *start, char *cmd, char *end);
+t_list		*ft_listnew(void *content, size_t size);
+void		ft_listdel(t_list **head);
+
+void		ft_freejoin(char **str);
+
 #endif
