@@ -6,13 +6,13 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 19:22:35 by echavez-          #+#    #+#             */
-/*   Updated: 2023/02/22 19:35:26 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/02/22 22:10:46 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	**ft_gstrjoin(char **gstrjoin)
+t_list	**ft_gstrjoin(char *gstrjoin)
 {
 	static t_list	*head = NULL;
 	t_list			*tmp;
@@ -21,7 +21,7 @@ t_list	**ft_gstrjoin(char **gstrjoin)
 	{
 		if (!head)
 		{
-			head = ft_listnew(*gstrjoin, sizeof(*gstrjoin));
+			head = ft_listnew(gstrjoin, sizeof(gstrjoin));
 			if (!head)
 				return (NULL);
 			return (&head);
@@ -29,7 +29,7 @@ t_list	**ft_gstrjoin(char **gstrjoin)
 		tmp = head;
 		while (tmp->next)
 			tmp = tmp->next;
-		tmp->next = ft_listnew(*gstrjoin, sizeof(*gstrjoin));
+		tmp->next = ft_listnew(gstrjoin, sizeof(gstrjoin));
 		if (!tmp->next)
 		{
 			ft_listdel(&head);
@@ -43,23 +43,20 @@ t_list	**ft_gstrjoin(char **gstrjoin)
 
 void	ft_freejoin(char **str)
 {
-	t_list	**head;
 	t_list	*tmp;
 
-	head = ft_gstrjoin(NULL);
-	tmp = *head;
+	tmp = *ft_gstrjoin(NULL);
 	while (tmp)
 	{
-		if ((t_byte **)&tmp == (t_byte **)str)
+		if ((char *)tmp->obj == *str)
 		{
 			free(tmp->obj);
 			tmp->obj = NULL;
+			*str = NULL;
 			break ;
 		}
 		tmp = tmp->next;
 	}
-	if (!tmp)
-		ft_putstr_fd("freejoin: Didn't find the memory of the variable\n", 2);
 }
 
 char	*ft_strjoin(char const *s1, char const *s2)
@@ -85,7 +82,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (s2_len > j)
 		s[i++] = s2[j++];
 	s[i] = 0;
-	ft_gstrjoin(&s);
+	ft_gstrjoin(s);
 	return (s);
 }
 
