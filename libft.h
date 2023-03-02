@@ -6,10 +6,10 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:32:07 by echavez-          #+#    #+#             */
-/*   Updated: 2023/02/22 22:10:32 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/03/02 16:51:47 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+s
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -23,6 +23,14 @@
 # endif
 
 typedef unsigned char	t_byte;
+
+typedef struct s_doubly
+{
+	void			*obj;
+	size_t			size;
+	struct s_doubly	*prev;
+	struct s_doubly	*next;
+}					t_doubly;
 
 typedef struct s_list
 {
@@ -59,6 +67,7 @@ char		*ft_fstrdup(char **fsrc, const char *src);
 char		*ft_strndup(char const *src, int size);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
+void		ft_freejoin(char **str);
 char		*ft_strtrim(char const *s1, char const *set);
 char		**ft_split(char const *s, char c);
 char		**ft_split_args(const char *s);
@@ -77,7 +86,6 @@ int			ft_isspace(char c);
 int			ft_puterror(char *start, char *cmd, char *end);
 t_list		*ft_listnew(void *content, size_t size);
 void		ft_listdel(t_list **head);
-
-void		ft_freejoin(char **str);
+t_doubly	*ft_create_node(void *content, size_t size);
 
 #endif
