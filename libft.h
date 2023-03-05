@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:32:07 by echavez-          #+#    #+#             */
-/*   Updated: 2023/03/05 15:02:22 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/03/05 16:24:05 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ int			ft_puterror(char *start, char *cmd, char *end);
 t_list		*ft_listnew(void *content, size_t size);
 void		ft_listdel(t_list **head);
 t_doubly	*ft_create_node(void *content, size_t size);
-void		ft_insert_first(void *content, size_t size, t_doubly **start, t_doubly *end);
+void		ft_insert_first(t_doubly *new, t_doubly **start);
+void		ft_insert_last(t_doubly *new, t_doubly **start);
 
 #endif
