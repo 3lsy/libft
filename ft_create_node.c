@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 14:52:34 by echavez-          #+#    #+#             */
-/*   Updated: 2023/03/05 14:53:04 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/03/08 14:13:32 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,15 @@ t_doubly	*ft_create_node(void *content, size_t size)
 {
 	t_doubly	*new;
 
-	new = malloc(sizeof(t_doubly));
+	new = (t_doubly*)malloc(sizeof(t_doubly));
 	if (!new)
 		return (NULL);
 	if (content)
 	{
-		new->obj = content;
+		new->obj = (void*)malloc(sizeof(void) * (size + 1));
+		if (!(new->obj))
+			return (NULL);
+		ft_memcpy(new->obj, content, size);
 		new->size = size;
 	}
 	else
