@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:32:07 by echavez-          #+#    #+#             */
-/*   Updated: 2023/03/05 16:24:05 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/03/08 23:22:52 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # endif
 
 typedef unsigned char	t_byte;
+typedef unsigned char	t_bool;
 
 typedef struct s_doubly
 {
@@ -88,8 +89,10 @@ int			ft_isspace(char c);
 int			ft_puterror(char *start, char *cmd, char *end);
 t_list		*ft_listnew(void *content, size_t size);
 void		ft_listdel(t_list **head);
-t_doubly	*ft_create_node(void *content, size_t size);
-void		ft_insert_first(t_doubly *new, t_doubly **start);
-void		ft_insert_last(t_doubly *new, t_doubly **start);
+t_doubly	*ft_new_doubly(void *content, size_t size);
+void		ft_push_doubly(t_doubly *new, t_doubly **start);
+void		ft_append_doubly(t_doubly *new, t_doubly **start);
+int			ft_perror(char *e, int n);
+void		ft_deldoubly(t_doubly **start);
 
 #endif

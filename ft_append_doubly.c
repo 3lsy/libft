@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_insert_last.c                                   :+:      :+:    :+:   */
+/*   ft_append_doubly.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/05 15:06:44 by echavez-          #+#    #+#             */
-/*   Updated: 2023/03/08 19:32:43 by echavez-         ###   ########.fr       */
+/*   Created: 2023/03/08 23:03:01 by echavez-          #+#    #+#             */
+/*   Updated: 2023/03/08 23:03:06 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_insert_last(t_doubly *new, t_doubly **start)
+void	ft_append_doubly(t_doubly *new, t_doubly **start)
 {
 	t_doubly	*end;
 
