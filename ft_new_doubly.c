@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create_node.c                                   :+:      :+:    :+:   */
+/*   ft_new_doubly.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/05 14:52:34 by echavez-          #+#    #+#             */
-/*   Updated: 2023/03/08 14:13:32 by echavez-         ###   ########.fr       */
+/*   Created: 2023/03/08 23:01:04 by echavez-          #+#    #+#             */
+/*   Updated: 2023/03/08 23:01:20 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_doubly	*ft_create_node(void *content, size_t size)
+t_doubly	*ft_new_doubly(void *content, size_t size)
 {
 	t_doubly	*new;
 
