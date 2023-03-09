@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:32:07 by echavez-          #+#    #+#             */
-/*   Updated: 2023/03/08 23:22:52 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/03/09 19:50:39 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,7 @@ void		ft_push_doubly(t_doubly *new, t_doubly **start);
 void		ft_append_doubly(t_doubly *new, t_doubly **start);
 int			ft_perror(char *e, int n);
 void		ft_deldoubly(t_doubly **start);
+void		ft_decap_doubly(t_doubly **start);
+void		ft_pop_doubly(t_doubly **start);
 
 #endif
