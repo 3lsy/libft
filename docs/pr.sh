@@ -7,5 +7,5 @@ if [ ! -z "$1" ]; then
 		git merge dev
 else
 	echo "Usage: ./pr.sh <commit message>"
-	ehco "WARNING: Only run on the dev branch when merging with the master branch!"
+	echo "WARNING: Only run on the dev branch when merging with the master branch!"
 fi
