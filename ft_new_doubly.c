@@ -16,12 +16,12 @@ t_doubly	*ft_new_doubly(void *content, size_t size)
 {
 	t_doubly	*new;
 
-	new = (t_doubly*)malloc(sizeof(t_doubly));
+	new = (t_doubly *)malloc(sizeof(t_doubly));
 	if (!new)
 		return (NULL);
 	if (content)
 	{
-		new->obj = (void*)malloc(sizeof(void) * (size + 1));
+		new->obj = (void *)malloc(sizeof(void) * size);
 		if (!(new->obj))
 			return (NULL);
 		ft_memcpy(new->obj, content, size);

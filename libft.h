@@ -22,6 +22,9 @@
 #  define BUFFER_SIZE 42
 # endif
 
+# define TRUE (t_bool)1
+# define FALSE (t_bool)0
+
 typedef unsigned char	t_byte;
 typedef unsigned char	t_bool;
 
@@ -71,6 +74,7 @@ char		*ft_strndup(char const *src, int size);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
 void		ft_freejoin(char **str);
+void	ft_sort_int(int *tab, int size);
 char		*ft_strtrim(char const *s1, char const *set);
 char		**ft_split(char const *s, char c);
 char		**ft_split_args(const char *s);
