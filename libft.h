@@ -43,6 +43,11 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct s_int {
+	int				x;
+	t_bool			exists;
+}					t_int;
+
 int			ft_isint(char *nb);
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
@@ -74,7 +79,8 @@ char		*ft_strndup(char const *src, int size);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
 void		ft_freejoin(char **str);
-void	ft_sort_int(int *tab, int size);
+void		ft_sort_int(int *tab, int size);
+void		ft_sort_t_int(t_int *tab, int size);
 char		*ft_strtrim(char const *s1, char const *set);
 char		**ft_split(char const *s, char c);
 char		**ft_split_args(const char *s);
