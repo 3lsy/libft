@@ -22,9 +22,6 @@
 #  define BUFFER_SIZE 42
 # endif
 
-# define TRUE (t_bool)1
-# define FALSE (t_bool)0
-
 typedef unsigned char	t_byte;
 typedef unsigned char	t_bool;
 
