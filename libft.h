@@ -40,6 +40,11 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct s_pair {
+	int				x;
+	int				y;
+}					t_pair;
+
 typedef struct s_int {
 	int				x;
 	t_bool			exists;
