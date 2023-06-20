@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:32:07 by echavez-          #+#    #+#             */
-/*   Updated: 2023/03/17 20:07:00 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/06/20 22:42:53 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,5 +109,6 @@ void		ft_deldoubly(t_doubly **start);
 void		ft_decap_doubly(t_doubly **start);
 void		ft_pop_doubly(t_doubly **start);
 void		ft_detach_doubly(t_doubly **start);
+long		ft_abs(long nb);
 
 #endif

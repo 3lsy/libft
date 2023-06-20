@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:56:42 by echavez-          #+#    #+#             */
-/*   Updated: 2022/11/20 23:23:49 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/06/20 22:42:39 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	ft_intlen(long nb)
 	return (i);
 }
 
-static long	ft_abs(long nb)
+long	ft_abs(long nb)
 {
 	if (nb < 0)
 		return (-nb);
