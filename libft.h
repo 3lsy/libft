@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:32:07 by echavez-          #+#    #+#             */
-/*   Updated: 2023/06/20 22:42:53 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/06/22 21:36:29 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 void		ft_putchar_fd(char c, int fd);
 int			ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
+void		ft_putendl(char *s);
 void		ft_putnbr_fd(int n, int fd);
 int			ft_putnbr_base(int nbr, char *base);
 uintmax_t	ft_uputnbr_base(uintmax_t nbr, char *base);
