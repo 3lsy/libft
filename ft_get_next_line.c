@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 15:56:43 by echavez-          #+#    #+#             */
-/*   Updated: 2023/02/11 13:04:28 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/06/24 00:25:54 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ char	*ft_get_next_line(int fd)
 	if (enter >= 0)
 	{
 		line = ft_strdup(buffer);
-		line[enter + 1] = 0;
+		line[enter] = 0;
 		buffer = ft_fstrdup(&buffer, &buffer[enter + 1]);
 		return (ft_fstrdup(&line, line));
 	}
