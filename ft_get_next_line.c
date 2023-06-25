@@ -68,13 +68,18 @@ int	ft_fill_buffer(char **buffer, int fd)
 	return (1);
 }
 
+/*
+** Send a fd of -503 for freeing the buffer
+** if exiting before the EOF
+*/
+
 char	*ft_get_next_line(int fd)
 {
 	static char	*buffer = NULL;
 	char		*line;
 	int			enter;
 
-	if (!ft_fill_buffer(&buffer, fd))
+	if (fd == -503 || !ft_fill_buffer(&buffer, fd))
 	{
 		free(buffer);
 		buffer = NULL;
