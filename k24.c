@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   k24.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 23:38:52 by echavez-          #+#    #+#             */
-/*   Updated: 2022/11/20 23:39:50 by echavez-         ###   ########.fr       */
+/*   Created: 2023/09/11 17:53:53 by echavez-          #+#    #+#             */
+/*   Updated: 2023/09/11 17:53:56 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*
+**	k =  24
+**	char		**tab = (char **)calloc(16777213, sizeof(char *));
+**	tab[hash(line)] = "str"
+*/
 
-int	ft_putchar_fd(char c, int fd)
+unsigned int	k24(const char *key)
 {
-	return (write(fd, &c, 1));
+	unsigned int	hash;
+
+	hash = 5031;
+	while (*key)
+		hash = (hash * 101) + *key++;
+	return (hash % 16777213);
 }
