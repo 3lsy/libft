@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:32:07 by echavez-          #+#    #+#             */
-/*   Updated: 2023/09/11 18:14:57 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/09/12 15:29:57 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,13 +91,13 @@ void			*ft_free_split(char ***split);
 char			*ft_itoa(int n);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void			ft_striteri(char *s, void (*f)(unsigned int, char*));
-int 			ft_putchar_fd(char c, int fd);
+int				ft_putchar_fd(char c, int fd);
 int				ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putendl(char *s);
 void			ft_putnbr_fd(int n, int fd);
-int				ft_putnbr_base(int nbr, char *base);
-uintmax_t		ft_uputnbr_base(uintmax_t nbr, char *base);
+int				ft_putnbr_base(int nbr, char *base, int fd);
+uintmax_t		ft_uputnbr_base(uintmax_t nbr, char *base, int fd);
 char			*ft_get_next_line(int fd);
 int				ft_isspace(char c);
 int				ft_puterror(char *start, char *cmd, char *end);
