@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 19:22:35 by echavez-          #+#    #+#             */
-/*   Updated: 2023/02/22 22:10:46 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/09/14 22:01:30 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	ft_freejoin(char **str)
 	}
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2, int collect)
 {
 	size_t	s1_len;
 	size_t	s2_len;
@@ -82,7 +82,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (s2_len > j)
 		s[i++] = s2[j++];
 	s[i] = 0;
-	ft_gstrjoin(s);
+	if (collect)
+		ft_gstrjoin(s);
 	return (s);
 }
 
