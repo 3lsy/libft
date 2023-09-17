@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 17:42:45 by echavez-          #+#    #+#             */
-/*   Updated: 2023/02/02 15:30:37 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/09/17 18:23:22 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strdup(const char *src)
 	int		lens;
 	char	*cpy;
 
+	if (!src)
+		return (NULL);
 	lens = ft_strlen(src);
 	cpy = malloc(sizeof(char) * (lens + 1));
 	if (!cpy)
