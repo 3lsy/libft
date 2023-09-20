@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 14:08:36 by echavez-          #+#    #+#             */
-/*   Updated: 2023/02/11 22:15:38 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/09/21 01:07:34 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	ft_count_args(char const *str, int count_args)
 			while (str[i] && str[i] != quote)
 				i++;
 			if (str[i++] != quote)
-				return (-1 * ft_putstr_fd("Inconsistent quote\n", 2));
+				return (-1);
 		}
 		else if (str[i] && !ft_isspace(str[i]))
 		{
@@ -59,17 +59,11 @@ static char	*end_of_arg(const char *s, int *i, int j)
 	return (ft_strndup(&s[j], (*i) - j));
 }
 
-char	**ft_split_args(const char *s)
+static void	fill_tab(char **tab, const char *s)
 {
 	int		i;
 	int		k;
-	char	**tab;
 
-	if (!s || ft_count_args(s, 0) < 0)
-		return (NULL);
-	tab = malloc((ft_count_args(s, 0) + 1) * sizeof(char *));
-	if (!tab)
-		return (NULL);
 	k = 0;
 	i = 0;
 	while (s[i])
@@ -81,5 +75,21 @@ char	**ft_split_args(const char *s)
 		tab[k++] = end_of_arg(s, &i, i);
 	}
 	tab[k] = NULL;
+}
+
+char	**ft_split_args(const char *s)
+{
+	int		size;
+	char	**tab;
+
+	if (!s)
+		return (NULL);
+	size = ft_count_args(s, 0);
+	if (size < 0)
+		return (NULL);
+	tab = malloc((size + 1) * sizeof(char *));
+	if (!tab)
+		return (NULL);
+	fill_tab(tab, s);
 	return (tab);
 }
