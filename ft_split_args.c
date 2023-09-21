@@ -6,11 +6,29 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 14:08:36 by echavez-          #+#    #+#             */
-/*   Updated: 2023/09/21 01:07:34 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/09/21 21:01:53 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	read_arg(char const *str, int i, char *quote)
+{
+	if (str[i] && (str[i] == '\'' || str[i] == '\"'))
+	{
+		*quote = str[i++];
+		while (str[i] && str[i] != *quote)
+			i++;
+		if (str[i++] != *quote)
+			return (-1);
+	}
+	else if (str[i] && !ft_isspace(str[i]))
+	{
+		while (str[i] && !ft_isspace(str[i]))
+			i++;
+	}
+	return (i);
+}
 
 static int	ft_count_args(char const *str, int count_args)
 {
@@ -22,20 +40,13 @@ static int	ft_count_args(char const *str, int count_args)
 	{
 		while (str[i] && ft_isspace(str[i]))
 			i++;
-		if (str[i] && (str[i] == '\'' || str[i] == '\"'))
-		{
-			quote = str[i++];
+		if (str[i])
 			count_args++;
-			while (str[i] && str[i] != quote)
-				i++;
-			if (str[i++] != quote)
-				return (-1);
-		}
-		else if (str[i] && !ft_isspace(str[i]))
+		i = read_arg(str, i, &quote);
+		if (i < 0)
 		{
-			count_args++;
-			while (str[i] && !ft_isspace(str[i]))
-				i++;
+			errno = EINVAL;
+			return (-1);
 		}
 	}
 	return (count_args);

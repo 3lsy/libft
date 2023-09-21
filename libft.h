@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:32:07 by echavez-          #+#    #+#             */
-/*   Updated: 2023/09/17 20:33:16 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/09/21 21:05:33 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,14 @@
 # include <stdlib.h>
 # include <stdint.h>
 # include <unistd.h>
+# include <errno.h>
 # include "ft_printf.h"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
+
+# define K24_SIZE 16777213
 
 typedef unsigned char	t_byte;
 typedef unsigned char	t_bool;
