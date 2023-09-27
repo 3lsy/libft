@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:32:07 by echavez-          #+#    #+#             */
-/*   Updated: 2023/09/21 21:05:33 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/09/26 19:46:54 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ void			ft_sort_t_int(t_int *tab, int size);
 char			*ft_strtrim(char const *s1, char const *set);
 char			**ft_split(char const *s, char c);
 char			**ft_split_args(const char *s);
-void			*ft_free_split(char ***split);
+void			ft_free_split(char ***split);
 char			*ft_itoa(int n);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void			ft_striteri(char *s, void (*f)(unsigned int, char*));
