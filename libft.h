@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:32:07 by echavez-          #+#    #+#             */
-/*   Updated: 2023/09/26 19:46:54 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/10/02 22:39:20 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 size_t			ft_strcpy(char *dst, const char *src);
 char			*ft_strnew(size_t size);
 void			ft_strinsert(char **str, char c, size_t index);
+void			ft_strinserts(char **str, char *s, size_t index);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
