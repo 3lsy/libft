@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:32:07 by echavez-          #+#    #+#             */
-/*   Updated: 2023/10/02 22:39:20 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/12/11 15:30:48 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,14 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-typedef struct s_pair {
+typedef struct s_pair
+{
 	int				x;
 	int				y;
 }					t_pair;
 
-typedef struct s_int {
+typedef struct s_int
+{
 	int				x;
 	t_bool			exists;
 }					t_int;
