@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:32:07 by echavez-          #+#    #+#             */
-/*   Updated: 2023/12/11 15:30:48 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/12/14 01:22:38 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ typedef struct s_int
 }					t_int;
 
 int				ft_isint(char *nb);
+int				ft_isnum(char *nb);
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
 int				ft_isalnum(int c);
