@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 19:19:24 by echavez-          #+#    #+#             */
-/*   Updated: 2023/10/02 22:37:25 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/12/14 19:12:47 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	ft_strinserts(char **str, char *s, size_t index)
 		return ;
 	if (!*str)
 		return (char_str(str, *s));
+	if (!s)
+		s = "";
 	len = ft_strlen(*str);
 	if (index > len)
 	{
