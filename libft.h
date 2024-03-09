@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:32:07 by echavez-          #+#    #+#             */
-/*   Updated: 2024/03/05 15:48:44 by echavez-         ###   ########.fr       */
+/*   Updated: 2024/03/09 15:15:05 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
+
+# define TRUE 1
+# define FALSE 0
 
 typedef unsigned char	t_byte;
 typedef unsigned char	t_bool;
