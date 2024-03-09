@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isprintable.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 18:39:50 by echavez-          #+#    #+#             */
-/*   Updated: 2023/09/17 18:23:26 by echavez-         ###   ########.fr       */
+/*   Created: 2023/09/14 20:22:37 by echavez-          #+#    #+#             */
+/*   Updated: 2023/09/14 20:32:42 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_isprintable(char *str)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	if (!str)
-		return (0);
 	while (str[i])
+	{
+		if (!ft_isprint(str[i]))
+			return (0);
 		i++;
-	return (i);
+	}
+	return (1);
 }

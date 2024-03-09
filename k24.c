@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:53:53 by echavez-          #+#    #+#             */
-/*   Updated: 2023/09/12 16:29:51 by echavez-         ###   ########.fr       */
+/*   Updated: 2023/10/14 16:59:34 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ unsigned int	k24(const char *key)
 {
 	unsigned int	hash;
 
+	if (!key)
+		return (0);
 	hash = 5031;
 	while (*key)
 		hash = (hash * 101) + *key++;

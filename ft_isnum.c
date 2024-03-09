@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isnum.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 18:39:50 by echavez-          #+#    #+#             */
-/*   Updated: 2023/09/17 18:23:26 by echavez-         ###   ########.fr       */
+/*   Created: 2023/12/13 22:06:22 by echavez-          #+#    #+#             */
+/*   Updated: 2023/12/15 16:07:21 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_isnum(char *nb)
 {
-	size_t	i;
+	int	i;
 
-	i = 0;
-	if (!str)
+	if (!nb)
 		return (0);
-	while (str[i])
+	i = 0;
+	if (nb[0] == '-' || nb[0] == '+')
+	{
+		if (!nb[1] || !ft_isdigit(nb[1]))
+			return (0);
 		i++;
-	return (i);
+	}
+	while (nb[i] && ft_isdigit(nb[i]))
+		i++;
+	if (nb[i])
+		return (0);
+	return (1);
 }
