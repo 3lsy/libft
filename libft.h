@@ -6,7 +6,7 @@
 /*   By: echavez- <echavez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:32:07 by echavez-          #+#    #+#             */
-/*   Updated: 2024/03/09 15:20:02 by echavez-         ###   ########.fr       */
+/*   Updated: 2024/03/09 17:46:17 by echavez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # define TRUE 1
 # define FALSE 0
 # define K24_SIZE 16777213
+# define FREE_BUFFER -503
 
 typedef unsigned char	t_byte;
 typedef unsigned char	t_bool;
@@ -58,6 +59,8 @@ typedef struct s_int
 	t_bool			exists;
 }					t_int;
 
+int				ft_rgb_to_int(int r, int g, int b);
+int				ft_skip_spaces(const char *str, int i);
 int				ft_isint(char *nb);
 int				ft_isnum(char *nb);
 int				ft_isalpha(int c);
