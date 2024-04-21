@@ -26,7 +26,7 @@ static int	from_str(char const *s1, char c)
 	return (0);
 }
 
-static size_t	trim_size(char const *s1, char const *set, size_t *i, size_t *j)
+size_t	trim_size(char const *s1, char const *set, size_t *i, size_t *j)
 {
 	size_t	count;
 
@@ -34,7 +34,7 @@ static size_t	trim_size(char const *s1, char const *set, size_t *i, size_t *j)
 	while (s1[*i] && from_str(set, s1[*i]))
 		(*i)++;
 	*j = ft_strlen(s1) - 1;
-	while (*j != 0 && from_str(set, s1[*j]))
+	while (*j > 0 && from_str(set, s1[*j]))
 		(*j)--;
 	count = *i + (ft_strlen(s1) - 1 - *j);
 	if (*i == *j)
@@ -51,6 +51,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*new;
 	int		new_i;
 
+	if (!s1 || !set)
+		return (NULL);
+	if (ft_strlen(s1) == 0)
+		return (ft_strdup(""));
 	new = malloc((trim_size(s1, set, &i, &j) + 1) * sizeof(char));
 	if (!new)
 		return (NULL);
